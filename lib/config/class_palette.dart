@@ -19,7 +19,7 @@ MaterialColor generateMaterialColor(Color color) {
     600: shadeColor(color, 0.1),
     700: shadeColor(color, 0.2),
     800: shadeColor(color, 0.3),
-    900: shadeColor(color, 0.4),
+    900: shadeColor(color, 0.4)
   });
 }
 
