@@ -2,6 +2,7 @@ import 'package:feed_meal_app/config/class_palette.dart';
 import 'package:flutter/material.dart';
 import '../widgets/appbar.dart';
 import '../widgets/drawer.dart';
+import 'login.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

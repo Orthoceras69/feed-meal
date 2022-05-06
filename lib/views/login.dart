@@ -1,5 +1,7 @@
 import 'package:feed_meal_app/config/class_palette.dart';
 import 'package:flutter/material.dart';
+import 'register.dart';
+import 'homepage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
             decoration: const BoxDecoration(color: Palette.primary),
             child: Column(children: [
@@ -62,7 +65,12 @@ class _LoginPageState extends State<LoginPage> {
                             top: 0, left: 25, right: 25, bottom: 0),
                         child: TextButton(
                           onPressed: () {
-                            print('Forgot Password ?');
+                            print('forgot password'); // TODO
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => const 'Page'()),
+                            // );
                           },
                           child: const Text(
                             "Forgot password ?",
@@ -87,7 +95,11 @@ class _LoginPageState extends State<LoginPage> {
                                 fontSize: 16, fontFamily: "Roboto"),
                           ),
                           onPressed: () {
-                            print('Logging In');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage()),
+                            );
                           },
                           child: const Text('Logging In'))
                     ]),
@@ -100,7 +112,11 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         TextButton(
                             onPressed: () {
-                              print('Sign In');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const RegisterPage()),
+                              );
                             },
                             child: const Text(
                               "Sign In",

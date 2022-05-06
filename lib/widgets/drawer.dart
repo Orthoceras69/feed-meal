@@ -43,7 +43,8 @@ Widget myDrawer(BuildContext context, String title) {
                             style: TextStyle(color: Palette.dark)),
                         onTap: () {}),
                     Padding(
-                        padding: const EdgeInsets.only(top: 500),
+                        padding: EdgeInsetsDirectional.only(
+                            top: MediaQuery.of(context).size.height * 0.5),
                         child: ListTile(
                             leading:
                                 const Icon(Icons.settings, color: Palette.dark),
