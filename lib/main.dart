@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'config/class_palette.dart';
 import 'views/login.dart';
-import 'views/homepage.dart';
 
 void main() {
   runApp(MaterialApp(

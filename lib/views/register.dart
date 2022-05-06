@@ -111,7 +111,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   fontSize: 16, fontFamily: "Roboto"),
                             ),
                             onPressed: () {
-                              print('Signing In');
+                              // print('Signing In');
                             },
                             child: const Text('Signing In'))
                       ]),
