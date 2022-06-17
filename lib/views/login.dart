@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                                   builder: (context) => const HomePage()),
                             );
                           },
-                          child: const Text('Logging In'))
+                          child: const Text('Log In'))
                     ]),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

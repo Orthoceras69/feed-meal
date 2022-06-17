@@ -28,17 +28,17 @@ Widget dayCard(BuildContext context, String day) {
               const Text(
                 "Breakfast",
                 textAlign: TextAlign.left,
-                style: TextStyle(fontFamily: "FredokaOne", color: Palette.grey),
+                style: TextStyle(fontFamily: "FredokaOne", color: Palette.dark),
               ),
               mealCard(context, "Breakfast"),
               const Text(
                 "Lunch",
-                style: TextStyle(fontFamily: "FredokaOne", color: Palette.grey),
+                style: TextStyle(fontFamily: "FredokaOne", color: Palette.dark),
               ),
               mealCard(context, "Lunch"),
               const Text(
                 "Diner",
-                style: TextStyle(fontFamily: "FredokaOne", color: Palette.grey),
+                style: TextStyle(fontFamily: "FredokaOne", color: Palette.dark),
               ),
               mealCard(context, "Diner"),
             ],

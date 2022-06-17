@@ -113,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             onPressed: () {
                               // print('Signing In');
                             },
-                            child: const Text('Signing In'))
+                            child: const Text('Sign In'))
                       ]),
                     ),
                     Row(
