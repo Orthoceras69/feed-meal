@@ -65,7 +65,8 @@ class _LoginPageState extends State<LoginPage> {
                             top: 0, left: 25, right: 25, bottom: 0),
                         child: TextButton(
                           onPressed: () {
-                            print('forgot password'); // TODO
+                            // ignore: todo
+                            // print('forgot password'); // TODO
                             // Navigator.push(
                             //   context,
                             //   MaterialPageRoute(
@@ -101,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                                   builder: (context) => const HomePage()),
                             );
                           },
-                          child: const Text('Logging In'))
+                          child: const Text('Log In'))
                     ]),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

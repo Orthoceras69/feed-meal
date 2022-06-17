@@ -6,6 +6,7 @@ class Palette {
   static const Color secondary = Color(0xFFFF9D70);
   static const Color dark = Color(0xFF413D39);
   static const Color light = Color(0xFFFEF8EC);
+  static const Color grey = Color(0xFF787168);
 }
 
 MaterialColor generateMaterialColor(Color color) {
