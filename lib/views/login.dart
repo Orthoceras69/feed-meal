@@ -17,7 +17,15 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
-            decoration: const BoxDecoration(color: Palette.primary),
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Palette.primary,
+                Palette.primaryGradient,
+              ],
+            )),
             child: Column(children: [
               const Center(
                   child: Padding(
