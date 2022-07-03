@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../widgets/appbar.dart';
 import '../widgets/drawer.dart';
 import '../widgets/daycard.dart';
+import '../services/recipesAPI.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,6 +14,25 @@ class HomePage extends StatefulWidget {
 String title = "Planning";
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+
+    getRecipes();
+  }
+
+  var recipes;
+
+  Future<void> getRecipes() async {
+    try {
+      print("tryingg");
+      recipes = await getRecipesData();
+      print(recipes.toString());
+    } catch (e) {
+      debugPrint('$e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
