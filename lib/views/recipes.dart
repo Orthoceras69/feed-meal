@@ -1,4 +1,5 @@
 import 'package:feed_meal_app/config/class_palette.dart';
+import 'package:feed_meal_app/widgets/listviewbuilder.dart';
 import 'package:flutter/material.dart';
 import '../widgets/appbar.dart';
 import '../widgets/drawer.dart';
@@ -9,53 +10,56 @@ class RecipesPage extends StatefulWidget {
   State<RecipesPage> createState() => _RecipesPageState();
 }
 
-String title = "Recettes";
+String title = "Mes Recettes";
 
 class _RecipesPageState extends State<RecipesPage> {
-  final List<Map<String, dynamic>> _items = List.generate(
-      10,
-      (index) => {
-            "id": index,
-            "title": "Recette $index",
-            "subtitle": "Ingrédients Recette $index"
-          });
+  final TextEditingController _textController = TextEditingController();
+  List<String> initialList = [
+    "Pate à la Bolognaise",
+    "Pate à la Carbonara",
+    "Un Bourguignon",
+    "Une Poutine",
+    "Une Omelette aux Chips",
+    "Des Lasagnes"
+  ];
+  List<String> filteredList = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: myAppBar(context, title),
         body: Container(
             decoration: const BoxDecoration(color: Palette.light),
-            child: ListTileTheme(
-              contentPadding: const EdgeInsets.all(15),
-              iconColor: Palette.light,
-              textColor: Palette.light,
-              tileColor: Palette.primary,
-              style: ListTileStyle.list,
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16))),
-              dense: true,
-              child: ListView.builder(
-                itemCount: _items.length,
-                itemBuilder: (_, index) => Card(
-                  margin: const EdgeInsets.all(10),
-                  elevation: 4,
-                  child: ListTile(
-                    leading: const Icon(Icons.expand_more),
-                    title: Text(_items[index]['title']),
-                    subtitle: Text(_items[index]['subtitle']),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.edit)),
-                        IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.delete)),
-                      ],
-                    ),
-                  ),
+            child: Column(children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _textController,
+                  onChanged: (text) {
+                    text = text.toLowerCase();
+                    setState(() {
+                      filteredList = initialList
+                          .where(
+                              (element) => element.toLowerCase().contains(text))
+                          .toList();
+                    });
+                  },
                 ),
               ),
-            )),
+              if (filteredList.isEmpty && _textController.text.isEmpty)
+                Expanded(
+                    child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: listViewBuilder(context, initialList)))
+              else if (filteredList.isEmpty && _textController.text.isNotEmpty)
+                const Expanded(
+                  child: Text('Aucune donnée'),
+                )
+              else
+                Expanded(
+                    child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: listViewBuilder(context, filteredList)))
+            ])),
         drawer: myDrawer(context, title));
   }
 }
