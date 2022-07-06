@@ -12,6 +12,9 @@ class LoginPage extends StatefulWidget {
 
 String title = "Login";
 
+final email = TextEditingController();
+final password = TextEditingController();
+
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -42,10 +45,12 @@ class _LoginPageState extends State<LoginPage> {
                     const EdgeInsets.only(top: 50.0, left: 25.0, right: 25.0),
                 child: Center(
                     child: Column(children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 20, left: 25.0, right: 25.0),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 20, left: 25.0, right: 25.0),
                     child: TextField(
-                      decoration: InputDecoration(
+                      controller: email,
+                      decoration: const InputDecoration(
                           filled: true,
                           fillColor: Palette.light,
                           hintStyle: TextStyle(color: Palette.dark),
@@ -57,12 +62,13 @@ class _LoginPageState extends State<LoginPage> {
                           hintText: 'Username / Email'),
                     ),
                   ),
-                  const Padding(
-                      padding:
-                          EdgeInsets.only(top: 20, left: 25.0, right: 25.0),
+                  Padding(
+                      padding: const EdgeInsets.only(
+                          top: 20, left: 25.0, right: 25.0),
                       child: TextField(
+                          controller: password,
                           obscureText: true,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               filled: true,
                               fillColor: Palette.light,
                               hintStyle: TextStyle(color: Palette.dark),
