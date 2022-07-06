@@ -19,7 +19,9 @@ class _RecipesResearchPageState extends State<RecipesResearchPage> {
     "Un Bourguignon",
     "Une Poutine",
     "Une Omelette aux Chips",
-    "Des Lasagnes"
+    "Des Lasagnes",
+    "Une Pizza 4 Fromages",
+    "Une Pizza à l'Ananas"
   ];
   List<String> filteredList = [];
   @override
@@ -76,13 +78,18 @@ class _RecipesResearchPageState extends State<RecipesResearchPage> {
                   child: ListView.builder(
                       itemCount: filteredList.length,
                       itemBuilder: (BuildContext context, index) {
-                        return SizedBox(
-                          height: 50,
-                          child: ListTile(
-                            title: Text(filteredList[index]),
-                            trailing: const IconButton(
-                              icon: Icon(Icons.add_circle_outline),
-                              onPressed: null,
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: SizedBox(
+                            height: 50,
+                            child: ListTile(
+                              leading: const Image(
+                                  image: AssetImage("assets/img/repas.jpeg")),
+                              title: Text(filteredList[index]),
+                              trailing: const IconButton(
+                                icon: Icon(Icons.add_circle_outline),
+                                onPressed: null,
+                              ),
                             ),
                           ),
                         );
