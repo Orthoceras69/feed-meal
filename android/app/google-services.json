@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1096971385817",
+    "project_id": "feedmeal-c68c1",
+    "storage_bucket": "feedmeal-c68c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096971385817:android:c8d9ae958f7b29205677c8",
+        "android_client_info": {
+          "package_name": "com.ynov.feedmeal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096971385817-np4ogpojvdavp817d46k7l2gk0n67hj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbBTx5apAnRMK0KLGoOcN9zbl7Lizz2Y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096971385817-np4ogpojvdavp817d46k7l2gk0n67hj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
