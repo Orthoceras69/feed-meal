@@ -1,5 +1,8 @@
 import 'package:feed_meal_app/config/class_palette.dart';
+import 'package:feed_meal_app/views/homepage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../services/signUp.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -8,6 +11,9 @@ class RegisterPage extends StatefulWidget {
 }
 
 String title = "Login";
+
+final email = TextEditingController();
+final password = TextEditingController();
 
 class _RegisterPageState extends State<RegisterPage> {
   @override
@@ -52,11 +58,12 @@ class _RegisterPageState extends State<RegisterPage> {
                             hintText: 'Username'),
                       ),
                     ),
-                    const Padding(
-                      padding:
-                          EdgeInsets.only(top: 20, left: 25.0, right: 25.0),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 20, left: 25.0, right: 25.0),
                       child: TextField(
-                        decoration: InputDecoration(
+                        controller: email,
+                        decoration: const InputDecoration(
                             filled: true,
                             fillColor: Palette.light,
                             hintStyle: TextStyle(color: Palette.dark),
@@ -68,11 +75,12 @@ class _RegisterPageState extends State<RegisterPage> {
                             hintText: 'Email'),
                       ),
                     ),
-                    const Padding(
-                      padding:
-                          EdgeInsets.only(top: 20, left: 25.0, right: 25.0),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 20, left: 25.0, right: 25.0),
                       child: TextField(
-                        decoration: InputDecoration(
+                        controller: password,
+                        decoration: const InputDecoration(
                             filled: true,
                             fillColor: Palette.light,
                             hintStyle: TextStyle(color: Palette.dark),
@@ -84,11 +92,12 @@ class _RegisterPageState extends State<RegisterPage> {
                             hintText: 'Password'),
                       ),
                     ),
-                    const Padding(
-                        padding:
-                            EdgeInsets.only(top: 20, left: 25.0, right: 25.0),
+                    Padding(
+                        padding: const EdgeInsets.only(
+                            top: 20, left: 25.0, right: 25.0),
                         child: TextField(
-                            decoration: InputDecoration(
+                            controller: password,
+                            decoration: const InputDecoration(
                                 filled: true,
                                 fillColor: Palette.light,
                                 hintStyle: TextStyle(color: Palette.dark),
@@ -118,8 +127,25 @@ class _RegisterPageState extends State<RegisterPage> {
                               textStyle: const TextStyle(
                                   fontSize: 16, fontFamily: "Roboto"),
                             ),
-                            onPressed: () {
+                            onPressed: () async {
                               // print('Signing In');
+                              SignUpUseCase()
+                                  .signUp(
+                                      email: email.text,
+                                      password: password.text)
+                                  .then((result) async {
+                                if (result == null) {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomePage()));
+                                } else {
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(SnackBar(
+                                    content: Text(result),
+                                  ));
+                                }
+                              });
                             },
                             child: const Text('Sign In'))
                       ]),
