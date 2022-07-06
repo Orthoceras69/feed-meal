@@ -4,13 +4,10 @@
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
-
     The path provided below has to start and end with a slash "/" in order for
     it to work correctly.
-
     For more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
@@ -37,24 +34,6 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "firebase/app";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-    
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-      apiKey: "AIzaSyAX3dw-pvGEUypoG3bsH8km3RgETFBOERQ",
-      authDomain: "feedmeal-c68c1.firebaseapp.com",
-      projectId: "feedmeal-c68c1",
-      storageBucket: "feedmeal-c68c1.appspot.com",
-      messagingSenderId: "1096971385817",
-      appId: "1:1096971385817:web:f023ff1866fb02d05677c8"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
     function loadMainDartJs() {
