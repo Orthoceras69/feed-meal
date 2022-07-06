@@ -61,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding:
                           EdgeInsets.only(top: 20, left: 25.0, right: 25.0),
                       child: TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                               filled: true,
                               fillColor: Palette.light,
