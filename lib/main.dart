@@ -6,7 +6,9 @@ import 'config/class_palette.dart';
 import 'views/login.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: 'name-here',
     options: const FirebaseOptions(
         apiKey: "AIzaSyAX3dw-pvGEUypoG3bsH8km3RgETFBOERQ",
         authDomain: "feedmeal-c68c1.firebaseapp.com",
