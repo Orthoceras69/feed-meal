@@ -20,3 +20,11 @@ jobs:
           channel: "stable"
       - name: "Run flutter pub get"
         run: flutter pub get
+      - name: "Build Web App"
+        run: flutter build web
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASEPIPELINE }}"
+          channelId: live
+          projectId: feedmeal-c68c1
