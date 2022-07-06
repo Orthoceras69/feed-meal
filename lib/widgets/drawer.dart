@@ -2,6 +2,8 @@ import 'package:feed_meal_app/config/class_palette.dart';
 import 'package:feed_meal_app/views/homepage.dart';
 import 'package:feed_meal_app/views/meal.dart';
 import 'package:feed_meal_app/views/recipes.dart';
+import 'package:feed_meal_app/views/recipes_research.dart';
+import 'package:feed_meal_app/views/settings.dart';
 import 'package:flutter/material.dart';
 
 Widget myDrawer(BuildContext context, String title) {
@@ -53,13 +55,25 @@ Widget myDrawer(BuildContext context, String title) {
                     ListTile(
                         leading:
                             const Icon(Icons.menu_book, color: Palette.dark),
-                        title: const Text("Recette",
+                        title: const Text("Mes Recettes",
                             style: TextStyle(color: Palette.dark)),
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const RecipesPage()));
+                        }),
+                    ListTile(
+                        leading: const Icon(Icons.playlist_add_rounded,
+                            color: Palette.dark),
+                        title: const Text("Nouvelles Recettes",
+                            style: TextStyle(color: Palette.dark)),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const RecipesResearchPage()));
                         }),
                     Padding(
                         padding: EdgeInsetsDirectional.only(
@@ -69,7 +83,13 @@ Widget myDrawer(BuildContext context, String title) {
                                 const Icon(Icons.settings, color: Palette.dark),
                             title: const Text("Réglages",
                                 style: TextStyle(color: Palette.dark)),
-                            onTap: () {}))
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SettingsPage()));
+                            }))
                   ])
                 ]))
       ]));
