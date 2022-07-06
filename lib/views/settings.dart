@@ -1,5 +1,4 @@
 import 'package:feed_meal_app/config/class_palette.dart';
-import 'package:feed_meal_app/views/login.dart';
 import 'package:flutter/material.dart';
 import '../widgets/appbar.dart';
 import '../widgets/drawer.dart';
