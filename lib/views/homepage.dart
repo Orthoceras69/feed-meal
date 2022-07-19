@@ -22,11 +22,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   var recipes;
+  final String search = "poulet";
 
   Future<void> getRecipes() async {
     try {
-      print("tryingg");
-      recipes = await getRecipesData();
+      print("get the recipes with : " + search);
+      recipes = await getRecipesData(search);
       print(recipes.toString());
     } catch (e) {
       debugPrint('$e');
