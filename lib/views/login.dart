@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                                   BorderSide(style: BorderStyle.none, width: 0),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16))),
-                          hintText: 'Username / Email'),
+                          hintText: 'Username/Email'),
                     ),
                   ),
                   Padding(
